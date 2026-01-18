@@ -89,7 +89,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "all",
+        "collection": "automated-collection",
         "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
@@ -234,7 +234,7 @@
             "vertical_padding": 40,
             "horizontal_padding": 20,
             "sticky_offset": 0,
-            "content_bg_color": "#FFFFFF",
+            "content_bg_color": "#ffffff",
             "content_padding": 20,
             "border_radius": 0,
             "desktop_width_percent": 100
