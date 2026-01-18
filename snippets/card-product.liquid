@@ -58,7 +58,6 @@
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
-          card_product.featured_media
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
@@ -107,7 +106,6 @@
             </div>
           </div>
         {%- endif -%}
-        eeee
         <div class="card__content">
           <div class="card__information">
             <h3
