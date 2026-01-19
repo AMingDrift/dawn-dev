@@ -87,7 +87,13 @@
                 aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
                 tabindex="-1"
               >
-                demo
+                <div
+                  class="announcement-bar__announcement"
+                  role="region"
+                  aria-label="{{ 'sections.header.announcement' | t }}"
+                >
+                  demo
+                </div>
               </div>
             {%- endfor -%}
           </div>
