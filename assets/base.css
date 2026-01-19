@@ -579,7 +579,7 @@ details > * {
 :root {
   --duration-short: 100ms;
   --duration-default: 200ms;
-  --duration-announcement-bar: 0ms;
+  --duration-announcement-bar: 250ms;
   --duration-medium: 300ms;
   --duration-long: 500ms;
   --duration-extra-long: 600ms;
