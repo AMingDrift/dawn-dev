@@ -2264,7 +2264,7 @@ input[type='checkbox'] {
 .announcement-bar-slider--fade-in-next .announcement-bar__message {
   --announcement-translate-from: -1.5rem;
   /* Prevent flicker */
-  opacity: 0;
+  /* opacity: 0; */
   animation-name: translateAnnouncementSlideIn;
   animation-delay: var(--duration-announcement-bar);
 }
