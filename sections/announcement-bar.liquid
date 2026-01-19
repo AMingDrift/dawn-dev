@@ -78,7 +78,17 @@
             data-speed="{{ section.settings.change_slides_speed }}"
           >
             {%- for block in section.blocks -%}
-              demo
+              <div
+                class="slideshow__slide slider__slide grid__item grid--1-col"
+                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                {{ block.shopify_attributes }}
+                role="group"
+                aria-roledescription="{{ 'sections.announcements.announcement' | t }}"
+                aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                tabindex="-1"
+              >
+                demo
+              </div>
             {%- endfor -%}
           </div>
           <button
