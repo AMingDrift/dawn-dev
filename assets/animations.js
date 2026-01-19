@@ -33,7 +33,7 @@ function initializeScrollAnimationTrigger(rootEl = document, isDesignModeEvent =
   }
 
   const observer = new IntersectionObserver(onIntersection, {
-    rootMargin: '0px 0px -50px 0px',
+    rootMargin: '0px 0px 50px 0px',
   });
   animationTriggerElements.forEach((element) => observer.observe(element));
 }
@@ -66,7 +66,7 @@ function initializeScrollZoomAnimationTrigger() {
 
         element.style.setProperty('--zoom-in-ratio', 1 + scaleAmount * percentageSeen(element));
       }),
-      { passive: true }
+      { passive: true },
     );
   });
 }
