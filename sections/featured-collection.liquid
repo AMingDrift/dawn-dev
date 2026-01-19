@@ -93,10 +93,15 @@
       {%- endif -%}
     </div>
 
-    section.settings.full_width: {{ section.settings.full_width }} <br>
-    show_mobile_slider: {{- show_mobile_slider }}
-    show_desktop_slider: {{ show_desktop_slider }} settings.animations_reveal_on_scroll:
-    {{ settings.animations_reveal_on_scroll }}
+    section.settings.full_width: {{ section.settings.full_width }}
+    <br>
+    show_mobile_slider:
+    {{- show_mobile_slider -}}
+    <br>
+    show_desktop_slider: {{ show_desktop_slider }}
+    <br>
+    settings.animations_reveal_on_scroll: {{ settings.animations_reveal_on_scroll -}}
+    <br>
 
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
