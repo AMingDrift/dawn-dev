@@ -7,7 +7,7 @@ const SCROLL_ANIMATION_CANCEL_CLASSNAME = 'scroll-trigger--cancel';
 function onIntersection(elements, observer) {
   elements.forEach((element, index) => {
     console.log('element', element);
-    console.log('Intersection', element.intersectionRatio);
+    console.log('Intersection', element.isIntersecting);
     if (element.isIntersecting) {
       const elementTarget = element.target;
       if (elementTarget.classList.contains(SCROLL_ANIMATION_OFFSCREEN_CLASSNAME)) {
