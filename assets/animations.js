@@ -5,6 +5,7 @@ const SCROLL_ANIMATION_CANCEL_CLASSNAME = 'scroll-trigger--cancel';
 
 // Scroll in animation logic
 function onIntersection(elements, observer) {
+  console.log('Intersection', elements);
   elements.forEach((element, index) => {
     if (element.isIntersecting) {
       const elementTarget = element.target;
