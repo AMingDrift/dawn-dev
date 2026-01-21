@@ -105,8 +105,8 @@
 }
 
 .card__media {
-  margin: var(--image-padding);
-  width: calc(100%);
+  margin: 0;
+  width: calc(100% );
 }
 
 .card--standard .card__media {
