@@ -89,7 +89,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "automated-collection",
+        "collection": "b2",
         "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
