@@ -99,10 +99,10 @@
         "button_HmrjKG"
       ],
       "settings": {
-        "desktop_content_position": "center",
+        "desktop_content_position": "left",
         "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": false,
+        "color_scheme": "scheme-3",
+        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
       }
