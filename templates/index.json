@@ -59,6 +59,14 @@
     "rich_text": {
       "type": "rich-text",
       "blocks": {
+        "caption_4mDTfC": {
+          "type": "caption",
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "subtitle",
+            "text_size": "large"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
@@ -74,6 +82,7 @@
         }
       },
       "block_order": [
+        "caption_4mDTfC",
         "heading",
         "text"
       ],
