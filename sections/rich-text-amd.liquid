@@ -49,19 +49,6 @@
       }
     }
 
-    /* 水波纹元素 */
-    .button::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 75%;
-      background: rgba(200, 200, 200, 0.4); /* 浅灰色 */
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
 
     /* hover 时触发水波纹扩散 */
     .button:hover::before {
