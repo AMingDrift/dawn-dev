@@ -3079,7 +3079,12 @@
         }
       },
       "presets": {
-        "name": "Rich text-AMD"
+        "name": "Rich text-AMD",
+        "settings": {
+        "heading": "欢迎访问",
+        "text": "<p>在这里分享您的品牌故事</p>",
+        "alignment": "center"
+      }
       }
     },
     "video": {
