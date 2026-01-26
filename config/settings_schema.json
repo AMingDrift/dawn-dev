@@ -111,7 +111,7 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "inter_n4",
+        "default": "inter_n6",
         "label": "t:settings_schema.typography.settings.type_header_font.label"
       },
       {
