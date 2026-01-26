@@ -3,3 +3,7 @@
   padding-right: var(--padding-content-full-width);
   max-width: 100vw;
 }
+
+.full-width {
+  max-width: 100vw;
+}
