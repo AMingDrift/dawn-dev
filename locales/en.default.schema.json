@@ -397,6 +397,7 @@
         "padding_top": "Top",
         "padding_bottom": "Bottom"
       },
+      "layout": "Section layout",
       "spacing": "Spacing",
       "colors": {
         "label": "Color scheme",
