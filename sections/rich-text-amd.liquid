@@ -2,41 +2,20 @@
 {{ 'base-amd.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-    }
-
-    @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
       }
-    }
 
-    /* 按钮基础样式 */
-  .button {
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.4rem;
-    padding: 1.2rem 2.4rem;
-  }
+      @media screen and (min-width: 750px) {
+        .section-{{ section.id }}-padding {
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+      }
 
-  /* 水波纹扩散动画 */
-  @keyframes ripple {
-    0% {
-      width: 0;
-      height: 0;
-      opacity: 0.5;
-    }
-    100% {
-      width: 400px;
-      height: 400px;
-      opacity: 0;
-    }
-  }
-
-  /* 水波纹元素 */
+      /* 按钮基础样式 */
+    /* 方案 1: 使用深色水波纹（适合浅色按钮） */
   .button::before {
     content: '';
     position: absolute;
@@ -44,16 +23,44 @@
     left: 50%;
     width: 0;
     height: 0;
-    border-radius: 75%;
-    background: rgba(200, 200, 200, 0.4); /* 浅灰色 */
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1); /* 改成深色半透明 */
     transform: translate(-50%, -50%);
     pointer-events: none;
   }
 
-  /* hover 时触发水波纹扩散 */
-  .button:hover::before {
-    animation: ripple 0.6s ease-out;
-  }
+    /* 水波纹扩散动画 */
+    @keyframes ripple {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+      }
+      100% {
+        width: 400px;
+        height: 400px;
+        opacity: 0;
+      }
+    }
+
+    /* 水波纹元素 */
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 75%;
+      background: rgba(200, 200, 200, 0.4); /* 浅灰色 */
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    /* hover 时触发水波纹扩散 */
+    .button:hover::before {
+      animation: ripple 0.6s ease-out;
+    }
 {%- endstyle -%}
 
 <div class="{% unless section.settings.full_width %} page-width{% endunless %}">
