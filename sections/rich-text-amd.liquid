@@ -15,8 +15,14 @@
       }
 
       /* 按钮基础样式 */
-    /* 方案 1: 使用深色水波纹（适合浅色按钮） */
-  .button::before {
+    .button {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.4rem;
+      padding: 1.2rem 2.4rem;
+    }
+
+    .button::before {
     content: '';
     position: absolute;
     top: 50%;
