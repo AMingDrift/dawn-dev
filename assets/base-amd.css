@@ -3,7 +3,7 @@
 }
 
 :root {
-  
+  --padding-content-full-width: 32px;
 }
 
 .full-width {
