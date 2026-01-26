@@ -3595,13 +3595,3 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
-
-
-body,
-p {
-  /* 针对 WebKit/Blink 内核（Chrome、Safari、新版 Edge） */
-font-feature-settings:normal;
-font-variation-settings:normal;
-unicode-bidi: isolate;
-box-sizing: border-box;
-}
