@@ -3080,11 +3080,6 @@
       },
       "presets": {
         "name": "Rich text-AMD",
-        "settings": {
-          "heading": {
-              "label": "Heading123",
-            }
-        }
       }
     },
     "video": {
