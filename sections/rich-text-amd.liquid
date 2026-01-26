@@ -2,73 +2,57 @@
 {{ 'base-amd.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+  }
 
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-      }
-    }
-
-    /* 按钮水波纹效果 */
-    .rich-text__buttons .button {
-      position: relative;
-      overflow: hidden;
-      border-radius: 6px;
-    }
-
-    .rich-text__buttons .button {
+  /* 按钮水波纹效果 */
+  .rich-text__buttons .button {
     position: relative;
     overflow: hidden;
+    border-radius: 6px;
   }
+  
 
-  /* 只移除鼠标 hover 的 outline，保留键盘焦点的 outline */
-  .rich-text__buttons .button:hover {
-    outline: none;
-    box-shadow: none;
-  }
-
-  /* 保留键盘导航的焦点样式 */
-  .rich-text__buttons .button:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-  }
-
-    @media (min-width: 750px) {
-      .rich-text__buttons .button::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height: 2.5rem;
-        width: 1.25rem;
-        transform: translate(-50%, -50%) scaleX(0.1) scaleY(0.1);
-        opacity: 0;
-        background-color: rgba(var(--color-button-text), 0.3);
-        filter: blur(5px);
-        border-radius: 9999px;
-        transition: transform 0.4s ease, opacity 0.4s ease, width 0.4s ease, height 0.4s ease;
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .rich-text__buttons .button:hover::before {
-        opacity: 1;
-        width: 100%;
-        height: 100%;
-        transform: translate(-50%, -50%) scaleX(1.5) scaleY(1.5);
-      }
-
-      /* 确保按钮文字在水波纹上方 */
-      .rich-text__buttons .button > * {
-        position: relative;
-        z-index: 1;
-      }
+  @media (min-width: 750px) {
+    .rich-text__buttons .button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 2.5rem;
+      width: 1.25rem;
+      transform: translate(-50%, -50%) scaleX(0.1) scaleY(0.1);
+      opacity: 0;
+      background-color: rgba(var(--color-button-text), 0.3);
+      filter: blur(5px);
+      border-radius: 9999px;
+      transition: transform 0.4s ease, opacity 0.4s ease, width 0.4s ease, height 0.4s ease;
+      pointer-events: none;
+      z-index: 0;
     }
+
+    .rich-text__buttons .button:hover::before {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%) scaleX(1.5) scaleY(1.5);
+    }
+
+    /* 确保按钮文字在水波纹上方 */
+    .rich-text__buttons .button > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
 {%- endstyle -%}
 <div class="{% unless section.settings.full_width %} page-width{% endunless %}">
   <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
