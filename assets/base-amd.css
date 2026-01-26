@@ -3,7 +3,9 @@
 }
 
 @media (min-width: 768px) {
-  --padding-content-full-width: 32px;
+  :root {
+    --padding-content-full-width: 32px;
+  }
 }
 
 .full-width {
