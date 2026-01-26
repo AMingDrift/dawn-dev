@@ -3595,3 +3595,11 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+
+body,
+p {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
