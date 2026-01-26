@@ -3600,9 +3600,9 @@ details-disclosure > details {
 body,
 p {
   /* 针对 WebKit/Blink 内核（Chrome、Safari、新版 Edge） */
--webkit-font-smoothing: antialiased;
-/* 针对 Firefox */
--moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: subpixel-antialiased;
+/* Firefox 也对应调整 */
+-moz-osx-font-smoothing: auto;
 /* 针对 IE/旧版 Edge（可选） */
 font-smooth: always;
 /* 通用字体渲染优化（可选） */
