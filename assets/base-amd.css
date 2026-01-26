@@ -16,4 +16,5 @@
 
 .rich-text__text {
   font-size: 1.4rem;
+  letter-spacing: normal; 
 }
