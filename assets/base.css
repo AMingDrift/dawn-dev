@@ -3600,5 +3600,6 @@ details-disclosure > details {
 body,
 p {
   /* 针对 WebKit/Blink 内核（Chrome、Safari、新版 Edge） */
-font-feature-settings:'normal'
+font-feature-settings:'normal';
+font-variation-settings:'normal';
 }
