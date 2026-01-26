@@ -2,58 +2,99 @@
 {{ 'base-amd.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    /* 按钮基础样式优化 */
+  .button {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    padding: 1.2rem 2.4rem;
+    transition: all 0.3s ease;
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+  /* 水波纹容器 */
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+
+  /* hover 时触发水波纹 */
+  .button:hover::before {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+
+  /* 按钮 hover 状态 */
+  .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 按钮激活状态 */
+  .button:active {
+    transform: translateY(0);
+  }
+  .button {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    padding: 1.2rem 2.4rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* 水波纹动画 */
+  @keyframes ripple {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(4);
+      opacity: 0;
     }
   }
 
-  /* 按钮基础样式优化 */
-.button {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.4rem;
-  padding: 1.2rem 2.4rem;
-  transition: all 0.3s ease;
-}
+  .button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+  }
 
-/* 水波纹容器 */
-.button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
-}
+  .button:hover::after {
+    animation: ripple 0.6s ease-out;
+  }
 
-/* hover 时触发水波纹 */
-.button:hover::before {
-  width: 300px;
-  height: 300px;
-  opacity: 0;
-}
-
-/* 按钮 hover 状态 */
-.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* 按钮激活状态 */
-.button:active {
-  transform: translateY(0);
-}
+  .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
 {%- endstyle -%}
 
 <div class="{% unless section.settings.full_width %} page-width{% endunless %}">
