@@ -2,27 +2,42 @@
 {{ 'base-amd.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-      }
-
-      @media screen and (min-width: 750px) {
         .section-{{ section.id }}-padding {
-          padding-top: {{ section.settings.padding_top }}px;
-          padding-bottom: {{ section.settings.padding_bottom }}px;
+          padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+          padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
         }
-      }
 
-      /* 按钮基础样式 */
-    .button {
-      position: relative;
-      overflow: hidden;
-      border-radius: 0.4rem;
-      padding: 1.2rem 2.4rem;
+        @media screen and (min-width: 750px) {
+          .section-{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+          }
+        }
+
+       /* 按钮基础样式 */
+  .button {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    padding: 1.2rem 2.4rem;
+  }
+
+  /* 水波纹扩散动画 */
+  @keyframes ripple {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0.8;
     }
+    100% {
+      width: 400px;
+      height: 400px;
+      opacity: 0;
+    }
+  }
 
-    .button::before {
+  /* 水波纹元素 - 自适应颜色 */
+  .button::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -30,30 +45,17 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.1); /* 改成深色半透明 */
+    background: currentColor; /* 使用按钮文字颜色 */
+    opacity: 0.2;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    mix-blend-mode: overlay; /* 混合模式，自动适配背景 */
   }
 
-    /* 水波纹扩散动画 */
-    @keyframes ripple {
-      0% {
-        width: 0;
-        height: 0;
-        opacity: 0.5;
-      }
-      100% {
-        width: 400px;
-        height: 400px;
-        opacity: 0;
-      }
-    }
-
-
-    /* hover 时触发水波纹扩散 */
-    .button:hover::before {
-      animation: ripple 0.6s ease-out;
-    }
+  /* hover 时触发水波纹扩散 */
+  .button:hover::before {
+    animation: ripple 0.6s ease-out;
+  }
 {%- endstyle -%}
 
 <div class="{% unless section.settings.full_width %} page-width{% endunless %}">
