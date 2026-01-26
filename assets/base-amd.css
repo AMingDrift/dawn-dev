@@ -13,3 +13,7 @@
   padding-right: var(--padding-content-full-width);
   max-width: 100vw;
 }
+
+.rich-text__text {
+  font-size: 1.4rem;
+}
