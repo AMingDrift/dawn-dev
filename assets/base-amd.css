@@ -2,12 +2,7 @@
   --padding-content-full-width: 16px;
 }
 
-body,
-p {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+
 
 @media (min-width: 768px) {
   :root {
