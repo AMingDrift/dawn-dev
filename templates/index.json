@@ -282,11 +282,11 @@
       ],
       "name": "t:sections.rich-text-amd.presets.name",
       "settings": {
-        "content_alignment": "center",
-        "color_scheme": "",
+        "content_alignment": "left",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "color_scheme": ""
       }
     }
   },
