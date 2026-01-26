@@ -59,14 +59,6 @@
     "rich_text": {
       "type": "rich-text",
       "blocks": {
-        "caption_4mDTfC": {
-          "type": "caption",
-          "settings": {
-            "caption": "Add a tagline",
-            "text_style": "subtitle",
-            "text_size": "large"
-          }
-        },
         "heading": {
           "type": "heading",
           "settings": {
@@ -77,34 +69,21 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "button_HmrjKG": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "Bnt2",
-            "button_link_2": "",
-            "button_style_secondary_2": true
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
           }
         }
       },
       "block_order": [
-        "caption_4mDTfC",
         "heading",
-        "text",
-        "button_HmrjKG"
+        "text"
       ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 44
+        "padding_bottom": 0
       }
     },
     "featured_collection": {
@@ -117,7 +96,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "enable_desktop_slider": true,
         "full_width": false,
         "show_view_all": false,
