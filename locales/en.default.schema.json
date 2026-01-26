@@ -3080,6 +3080,7 @@
       },
       "presets": {
         "name": "Rich text-AMD",
+        "name2": "Rich text-AMD2",
       }
     },
     "video": {
