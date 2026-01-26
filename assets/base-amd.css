@@ -1,0 +1,5 @@
+:root {
+    padding-left: var(--padding-content-full-width);
+  padding-right: var(--padding-content-full-width);
+  max-width: 100vw;
+}
