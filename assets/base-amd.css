@@ -1,3 +1,7 @@
+/* assets/base-amd.css */
+@import url('component-button.css');
+
+
 :root {
   --padding-content-full-width: 16px;
 }
