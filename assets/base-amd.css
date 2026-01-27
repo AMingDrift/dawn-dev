@@ -25,7 +25,4 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6; /* 统一行高比例 */
-  text-rendering: optimizeLegibility; /* 提升可读性，减少抖动 */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
